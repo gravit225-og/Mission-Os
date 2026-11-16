@@ -264,3 +264,10 @@ Desktop may use a grouped sidebar similar in information hierarchy to the refere
 ## 9. Visual implementation handoff
 
 Before feature UI is built, implement shared design tokens and the responsive app shell from [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md). Build each page against [SCREEN_LAYOUTS.md](SCREEN_LAYOUTS.md). Do not start with one-off card styling; use reusable components and semantic color tokens. Validate real phone widths and accessibility states before expanding the module set.
+
+
+## Master Specification v2 implementation source
+
+The product has expanded into an all-in-one personal workspace. Use [MASTER_SPEC_V2.md](MASTER_SPEC_V2.md) as the current product-level source of truth, [WORKSPACE_DATA_MODEL.md](WORKSPACE_DATA_MODEL.md) for the workspace/page/database schema, and [ARCHITECTURE_DECISIONS.md](ARCHITECTURE_DECISIONS.md) for provisional technology decisions and validation gates.
+
+The first alpha is Workspace + Pages + Block Editor + Quick Capture + Journal + Search + Export + offline drafts. Do not begin by implementing every module or the full custom database engine. Complete the technical validation and editor spike before locking the editor dependency or sync model.
