@@ -1,123 +1,71 @@
 # Mission OS
 
-A personal productivity and habit-tracking app built around sustainable execution, not endless task completion.
+**Personal Life & Productivity Data System**
 
-## Product vision
+Mission OS is a private, mobile-first personal data system for capturing life, organizing work, tracking meaningful activity, preserving personal history, and reviewing progress.
 
-Mission OS helps turn meaningful goals into repeatable daily actions. It combines habit tracking, task prioritization, focus sessions, energy awareness, learning systems, and regular reviews in one calm, game-inspired workspace.
+## Core architecture
 
-The app should help users answer four questions:
-1. What matters most right now?
-2. What is the next small action?
-3. How is my energy and focus changing?
-4. Am I making meaningful progress over time?
+- **Mission OS:** the system of record. It captures, stores, organizes, tracks, and displays personal data.
+- **ChatGPT:** the optional external intelligence layer for analysis, reasoning, research, and recommendations.
+- **API / MCP:** a secure, permission-controlled bridge between ChatGPT and Mission OS.
+
+Mission OS itself contains **no built-in AI chatbot, AI coach, AI-generated reflections, or AI interpretation engine**. Core features must work without ChatGPT.
+
+## Locked product decisions
+
+- Mobile-first installable PWA.
+- One unified chronological journal timeline with categories, tags, filters, and links.
+- Flexible user-created trackers and measurement types.
+- Private account with secure cloud storage.
+- Complete product specification before implementation.
+- Personal single-owner use initially, with user-scoped data security.
+
+## Product modules
+
+1. **Today / Mission Control:** daily priorities, habits, quick capture, and easy-start flow.
+2. **Journal:** free-form entries, ideas, events, learning, decisions, reflections, and a searchable timeline.
+3. **Habits:** flexible schedules and non-punitive tracking.
+4. **Tasks & Focus:** next actions, daily top three, starter sessions, focus history.
+5. **Goals & Projects:** milestones, linked tasks, and project history.
+6. **Flexible Trackers:** user-defined numeric, duration, boolean, rating, and text measurements.
+7. **Reflections:** optional daily, weekly, monthly, and quarterly reviews.
+8. **Analytics:** transparent deterministic charts and historical summaries.
 
 ## Product principles
 
-- **Impact over activity:** prioritize a small number of meaningful outcomes (Pareto principle and MITs).
-- **Sustainable consistency:** support routines without shame, punishment, or streak anxiety.
-- **Energy-aware planning:** let users identify their own high-energy windows rather than assuming everyone has the same schedule.
-- **Deep work by design:** make focused sessions, single-tasking, and distraction reduction easy.
-- **Small actions:** break large goals into clear next steps and make starting friction low.
-- **Learning that sticks:** support active recall, spaced repetition, deliberate practice, and reflection.
-- **Measure what matters:** track outcomes, consistency, focus, and energy without turning life into a scoreboard.
-- **Privacy and user control:** keep personal tracking data transparent and under the user's control.
+- Capture first, organize later.
+- Make starting meaningful work easy.
+- Reward initiation and progress, never button tapping.
+- No punishment for missed days or rest.
+- Data before interpretation.
+- Privacy, portability, and user control.
+- No dependence on AI for core app functionality.
 
-## Core app areas
+## Documentation
 
-1. **Today / Mission Control**
-   - Three most important tasks
-   - Today's habits
-   - Focus session launcher
-   - Energy check-in
-   - Quick capture for ideas and tasks
+- [Product Requirements Document](docs/PRODUCT_REQUIREMENTS.md)
+- [Data Model](docs/DATA_MODEL.md)
+- [Implementation Blueprint](docs/IMPLEMENTATION_PLAN.md)
+- [API & MCP Integration Specification](docs/API_MCP_SPEC.md)
 
-2. **Habits**
-   - Flexible schedules and frequencies
-   - Simple completion tracking
-   - Notes and optional reminders
-   - Streaks as optional context, never as punishment
+## Recommended technical direction
 
-3. **Goals and Projects**
-   - Long-term goals, milestones, projects, and next actions
-   - Impact-versus-effort prioritization
-   - Progress reviews
+React + TypeScript + Vite PWA, PostgreSQL/Supabase, authentication, row-level security, IndexedDB for reliable offline capture, and a separate MCP server for future ChatGPT integration. These are implementation recommendations to validate with a small technical spike before committing to the full stack.
 
-4. **Focus**
-   - Pomodoro and custom focus sessions
-   - Single-task session notes
-   - Distraction parking lot
-   - Session history
+## Development order
 
-5. **Energy and Rhythm**
-   - Lightweight energy ratings at configurable times
-   - Sleep and rest notes (optional)
-   - Personal pattern visualizations after enough data is collected
+1. Validate repository, framework, hosting, database, authentication, and offline strategy.
+2. Build the PWA foundation and security model.
+3. Build Quick Capture and Journal first. This is the first daily-use milestone.
+4. Add habits, tasks, focus sessions, and non-punitive rewards.
+5. Add goals, projects, and flexible trackers.
+6. Add reflections, deterministic analytics, and complete export/restore.
+7. Add read-only API/MCP access, then carefully scoped write tools.
+8. Test reliability, privacy, accessibility, and mobile usability.
 
-6. **Learning**
-   - Learning goals and practice plans
-   - Active-recall prompts
-   - Spaced-review scheduling
+## First milestone
 
-7. **Reviews and Insights**
-   - Daily shutdown
-   - Weekly review
-   - Monthly and quarterly goal reviews
-   - Trends that explain progress, not just count activity
+A working, installable app that lets its owner securely capture, search, edit, and review journal entries, including reliable offline capture and later sync.
 
-## Suggested build sequence
-
-### Phase 0: Foundation
-- Choose the stack and visual direction.
-- Establish app shell, navigation, and responsive layout.
-- Define data models and persistence strategy.
-
-### Phase 1: Useful MVP
-- Today dashboard
-- Habit creation and completion
-- Three daily priorities
-- Local persistence
-- Basic daily and weekly review
-
-### Phase 2: Focus and energy
-- Focus timer and session history
-- Energy check-ins
-- Personal productivity pattern charts
-
-### Phase 3: Goals and learning
-- Goals, projects, milestones, and next actions
-- Learning plans and spaced review
-
-### Phase 4: Insights and refinement
-- Weekly/monthly insights
-- Optional reminders and export/backup
-- Accessibility, polish, and testing
-
-## MVP success criteria
-
-A user can:
-- Create, edit, pause, and complete a habit.
-- Set up to three daily priorities.
-- See today's progress at a glance.
-- Record an energy check-in.
-- Complete a short daily review.
-- Close and reopen the app without losing locally saved data.
-
-## Product guardrails
-
-- Do not reward sleep deprivation, overwork, or excessive exercise.
-- Avoid guilt-based streak mechanics and punitive notifications.
-- Keep the default experience lightweight; advanced frameworks should be optional.
-- Never present productivity scores as a measure of personal worth.
-- Make data collection minimal and explain what is stored.
-
-## Open decisions
-
-- Frontend stack and deployment target
-- Visual direction and name/branding details
-- Local-first versus account-backed sync
-- Whether to ship as a responsive web app/PWA first
-
----
-
-*Mission OS is a working product concept. Features and implementation choices should be validated incrementally, starting with the smallest useful daily workflow.*
+See the documentation above for detailed requirements and acceptance criteria.
