@@ -90,3 +90,8 @@ Mission OS adopts a focused Today dashboard with a visible level/XP panel, dismi
 ## Visual design direction
 
 The current direction is Midnight Workshop: graphite dark surfaces, warm rose accent, restrained teal/gold semantic colors, clear typography, and responsive mobile-first layouts. The dashboard uses a level/XP panel, dismissible briefing, Main Mission, Habits Due Today, Quick Actions, and Recent Milestones. See the design system and screen layout specifications.
+
+
+## Prototype branch
+
+The first dependency-free Alpha 0.1 front-end spike is on the `prototype/alpha-01` branch. It explores the responsive shell, workspace/journal capture flow, IndexedDB persistence approach, and static app-shell PWA strategy. See [Technical Spike Alpha 0.1](docs/TECHNICAL_SPIKE_ALPHA_01.md) and [prototype notes](prototype/alpha-01/README.md). The source bundle is delivered separately; browser persistence and PWA behavior still require target-device verification.
