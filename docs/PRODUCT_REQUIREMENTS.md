@@ -361,3 +361,12 @@ On mobile, reorder and collapse sections to preserve a short path to Quick Captu
 - No built-in AI assistant (ChatGPT remains external).
 - No leaderboard, public profile, or community competition.
 - Planning cycles/seasons are a possible later enhancement, not an MVP dependency.
+
+
+## 14. Visual design system and screen layouts
+
+The visual specification is maintained separately:
+- [Design System](DESIGN_SYSTEM.md): colors, typography, spacing, navigation, components, interaction, accessibility, and tokens.
+- [Screen Layouts](SCREEN_LAYOUTS.md): desktop/mobile layouts and behaviors for Today, Capture, Journal, Tasks, Focus, Habits, Goals/Projects, Trackers, Reviews, Insights, Settings, and Recovery Mode.
+
+The Today dashboard adopts a level/XP panel, dismissible deterministic briefing, Main Mission card, Habits Due Today, Quick Actions, and Recent Milestones. It does not adopt an AI assistant, leaderboard, or community features.
