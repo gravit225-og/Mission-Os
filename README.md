@@ -48,6 +48,8 @@ Mission OS itself contains **no built-in AI chatbot, AI coach, AI-generated refl
 - [Data Model](docs/DATA_MODEL.md)
 - [Implementation Blueprint](docs/IMPLEMENTATION_PLAN.md)
 - [API & MCP Integration Specification](docs/API_MCP_SPEC.md)
+- [Design System](docs/DESIGN_SYSTEM.md)
+- [Screen Layouts](docs/SCREEN_LAYOUTS.md)
 
 ## Recommended technical direction
 
@@ -74,3 +76,8 @@ See the documentation above for detailed requirements and acceptance criteria.
 ## Dashboard inspiration review
 
 Mission OS adopts a focused Today dashboard with a visible level/XP panel, dismissible Today's Briefing, one Main Mission card with Start Focus and Complete actions, Habits Due Today, Quick Actions, Recent Milestones, and an optional user-controlled Recovery Mode. It does not adopt the reference app's built-in AI assistant, leaderboard, or community features. Optional planning cycles may be explored later without duplicating goals and projects.
+
+
+## Visual design direction
+
+The current direction is Midnight Workshop: graphite dark surfaces, warm rose accent, restrained teal/gold semantic colors, clear typography, and responsive mobile-first layouts. The dashboard uses a level/XP panel, dismissible briefing, Main Mission, Habits Due Today, Quick Actions, and Recent Milestones. See the design system and screen layout specifications.
