@@ -259,3 +259,8 @@ Build the Today dashboard from existing domain records rather than introducing p
 - Recovery Mode changes presentation and suggested scope only; it does not mutate task, habit, or XP history.
 
 Desktop may use a grouped sidebar similar in information hierarchy to the reference: Main (Today, Missions/Tasks, Habits, Focus), Personal (Goals/Projects, Trackers, Journal), Reflection (Reviews, Timeline, Achievements), Account (Profile, Settings). On mobile, use a compact bottom navigation and a prominent Quick Capture action. Do not reproduce the reference's brand, exact visual styling, AI assistant, or social features.
+
+
+## 9. Visual implementation handoff
+
+Before feature UI is built, implement shared design tokens and the responsive app shell from [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md). Build each page against [SCREEN_LAYOUTS.md](SCREEN_LAYOUTS.md). Do not start with one-off card styling; use reusable components and semantic color tokens. Validate real phone widths and accessibility states before expanding the module set.
