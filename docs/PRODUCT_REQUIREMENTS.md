@@ -312,3 +312,52 @@ Do not optimize for screen time, notification opens, streak length, or raw event
 ## 12. Technical choices to verify
 
 The product decisions are locked. Verify framework, database hosting region/provider, auth method, offline sync library, hosting, and MCP SDK/OAuth implementation during repository setup.
+
+
+## 13. Today dashboard design refinement
+
+The Today page is the daily launchpad. It should make the next useful action obvious while keeping the full system one tap away.
+
+Recommended desktop information order:
+1. Date and personalized greeting.
+2. Level and lifetime XP progress panel.
+3. Today's Briefing: a short, dismissible list of useful prompts.
+4. Main Mission: the selected top priority, with category, estimate, next action, reward preview, Start Focus and Complete controls.
+5. Habits Due Today: only habits scheduled for the current local date, with inline logging.
+6. Quick Actions: Quick Capture, Start Focus, Add Task, Log Habit, Add Measurement, New Journal Entry.
+7. Recent Milestones: recent goal/project milestones and achievements.
+
+On mobile, reorder and collapse sections to preserve a short path to Quick Capture and Main Mission. Users can hide or rearrange nonessential dashboard sections.
+
+### Today's Briefing rules
+- Briefing items are derived from actual app records and deterministic rules.
+- Examples: selected priority is not started; a scheduled habit is awaiting a log; a review is due; a project milestone is approaching.
+- Each item can be dismissed for the day.
+- No AI-generated advice or vague motivational notifications.
+- Do not repeatedly surface the same dismissed item during that local day.
+
+### Main Mission rules
+- User selects the Main Mission from their tasks or daily priorities.
+- If none is selected, show a helpful empty state to choose one or create a task.
+- Display its next action, estimated duration, project/category context, and available reward preview.
+- Start Focus opens the starter-session flow.
+- Complete requires the normal task completion action; it must not be confused with merely starting.
+- User may change the Main Mission at any time.
+
+### Level, achievements, and milestones
+- Level is calculated from lifetime XP using a documented progression curve.
+- XP is never lost through inactivity, rest, or missed habits.
+- Achievements are earned from transparent events and can be reviewed in a private achievements/history page.
+- Recent Milestones surfaces existing project/goal milestones; it must not create duplicate milestone records.
+
+### Recovery Mode
+- User-controlled mode for low-energy or overloaded days.
+- When enabled, dashboard prioritizes one minimum viable task, essential scheduled habits selected by the user, and a gentle option to defer other tasks.
+- It may hide nonessential dashboard modules and reduce visual urgency.
+- It does not change historical records, erase goals, reduce earned XP, or automatically mark tasks complete.
+- No AI detection of fatigue and no medical or psychological claims.
+
+### Explicitly rejected reference features
+- No built-in AI assistant (ChatGPT remains external).
+- No leaderboard, public profile, or community competition.
+- Planning cycles/seasons are a possible later enhancement, not an MVP dependency.
