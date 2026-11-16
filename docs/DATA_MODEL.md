@@ -18,7 +18,7 @@ Updated: 2026-11-16
 ## 2. Core tables
 
 ### profiles
-user_id UUID primary key / auth user FK; display_name nullable; timezone default Asia/Kolkata but editable; week_starts_on; date_format; theme; created_at; updated_at.
+user_id UUID primary key / auth user FK; display_name nullable; timezone default Asia/Kolkata but editable; week_starts_on; date_format; theme; dashboard_preferences JSONB (visible sections, order); recovery_mode_enabled BOOLEAN default false; created_at; updated_at.
 
 ### journal_entries
 id UUID PK; user_id UUID; entry_type text (daily, note, idea, event, learning, decision, project_update, reflection, milestone, other); title nullable; body required; occurred_at; created_at; updated_at; is_pinned; is_archived; private_from_connector; metadata JSONB; deleted_at nullable.
@@ -141,3 +141,12 @@ CSV export includes separate files for journal entries, habits, habit logs, task
 6. Metrics and metric entries.
 7. Reflections, decisions, activity events, reward events.
 8. Export/import and MCP-safe read views.
+
+
+## 10. Dashboard and rewards data notes
+
+- Level is derived from the sum of reward_events.points using a versioned progression curve; do not store a second mutable XP total unless a verified cache is required.
+- Achievements should initially be derived from reward/activity events and milestone records. Add a dedicated achievements table only if users need custom achievement definitions or manually managed unlocks.
+- Today's Briefing dismissal can use a small user-scoped briefing_dismissals table keyed by local_date and deterministic briefing_item_key, or a JSON preference only if the list remains very small. Prefer a table for auditability and idempotency.
+- Main Mission can reuse daily_priorities with a selected task reference or add a nullable main_mission_task_id to a daily dashboard state table if it needs to differ from the top three. Do not duplicate task content.
+- Recovery Mode is a user preference/state, not a diagnosis. Persist enabled state and optionally the date it applies to; it must not rewrite task or habit history.
