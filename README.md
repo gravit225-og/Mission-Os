@@ -23,7 +23,7 @@ Mission OS itself contains **no built-in AI chatbot, AI coach, AI-generated refl
 
 ## Product modules
 
-1. **Today / Mission Control:** daily priorities, habits, quick capture, and easy-start flow.
+1. **Today / Mission Control:** daily briefing, main mission, level/XP progress, habits due today, quick actions, recent milestones, and easy-start flow.
 2. **Journal:** free-form entries, ideas, events, learning, decisions, reflections, and a searchable timeline.
 3. **Habits:** flexible schedules and non-punitive tracking.
 4. **Tasks & Focus:** next actions, daily top three, starter sessions, focus history.
@@ -69,3 +69,8 @@ React + TypeScript + Vite PWA, PostgreSQL/Supabase, authentication, row-level se
 A working, installable app that lets its owner securely capture, search, edit, and review journal entries, including reliable offline capture and later sync.
 
 See the documentation above for detailed requirements and acceptance criteria.
+
+
+## Dashboard inspiration review
+
+Mission OS adopts a focused Today dashboard with a visible level/XP panel, dismissible Today's Briefing, one Main Mission card with Start Focus and Complete actions, Habits Due Today, Quick Actions, Recent Milestones, and an optional user-controlled Recovery Mode. It does not adopt the reference app's built-in AI assistant, leaderboard, or community features. Optional planning cycles may be explored later without duplicating goals and projects.
