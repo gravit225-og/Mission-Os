@@ -370,3 +370,9 @@ The visual specification is maintained separately:
 - [Screen Layouts](SCREEN_LAYOUTS.md): desktop/mobile layouts and behaviors for Today, Capture, Journal, Tasks, Focus, Habits, Goals/Projects, Trackers, Reviews, Insights, Settings, and Recovery Mode.
 
 The Today dashboard adopts a level/XP panel, dismissible deterministic briefing, Main Mission card, Habits Due Today, Quick Actions, and Recent Milestones. It does not adopt an AI assistant, leaderboard, or community features.
+
+
+## Master Specification v2 relationship
+
+The complete product definition is now maintained in [Master Specification v2](MASTER_SPEC_V2.md). It expands Mission OS into a modular personal workspace with pages, block editor, custom databases, views, relations, templates, life-management features, personal memory, trackers, reflections, offline capture, and external ChatGPT integration. This document remains the detailed requirements record for the original productivity modules; when scope overlaps, the Master Specification v2 is the current product-level source of truth.
+
