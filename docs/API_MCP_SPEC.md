@@ -38,7 +38,7 @@ There is no AI runtime inside Mission OS.
 
 ### get_today
 Input: optional local date; defaults to current date in configured timezone.
-Output: daily priorities, habit statuses, tasks due/selected, user-entered check-ins, recent non-private journal metadata. Do not return full bodies in dashboard summary.
+Output: selected Main Mission and daily priorities, habit statuses due today, tasks due/selected, user-entered check-ins, current level/XP totals, deterministic briefing items, Recovery Mode state, recent milestones, and recent non-private journal metadata. Do not return full journal bodies in dashboard summary. Respect local timezone and connector privacy filters.
 
 ### search_journal
 Input: query; optional from/to dates, entry types, tag IDs, limit (default 20, max 50), cursor.
@@ -133,3 +133,13 @@ Where relevant, content carries provenance metadata such as created_via=chatgpt_
 User asks ChatGPT to review last week.
 
 ChatGPT retrieves weekly summary data, habit logs, relevant tasks/projects, reflection, and journal matches for the date range. ChatGPT analyzes records, distinguishes facts from possible explanations, and proposes changes. Nothing is written back unless the user approves a specific save action.
+
+
+## 11. Dashboard data and actions
+
+Potential later tools, after read-only security review:
+- get_dashboard_briefing: returns deterministic briefing items and their source record IDs.
+- set_recovery_mode: changes the user's explicit dashboard preference; does not alter task/habit history.
+- set_main_mission: links an existing owned task as the selected Main Mission for a date.
+
+Do not expose a tool that automatically decides the user is tired, changes Recovery Mode without consent, or silently reprioritizes tasks.
