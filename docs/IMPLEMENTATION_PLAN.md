@@ -98,6 +98,11 @@ Tasks:
 - Starter timer and focus sessions.
 - Reward event ledger with idempotency.
 - Dashboard sections and visibility settings.
+- Level/XP panel derived from reward events.
+- Today's Briefing with deterministic, dismissible items.
+- Main Mission card with next action, Start Focus and Complete actions.
+- Habits Due Today, Quick Actions, and Recent Milestones sections.
+- User-controlled Recovery Mode.
 
 Exit:
 - Habit logs use correct local date.
@@ -241,3 +246,16 @@ Definition of done:
 10. Setup instructions and environment variable names documented.
 
 Do not implement all product modules in this ticket.
+
+
+## 8. Dashboard implementation notes
+
+Build the Today dashboard from existing domain records rather than introducing parallel copies:
+- Main Mission references an existing task/daily priority.
+- Habits Due Today queries active habits against the user's local date and schedule.
+- Recent Milestones queries existing milestone records.
+- Level and achievements derive from reward/activity events.
+- Briefing items are deterministic rules and can be dismissed for the current local day.
+- Recovery Mode changes presentation and suggested scope only; it does not mutate task, habit, or XP history.
+
+Desktop may use a grouped sidebar similar in information hierarchy to the reference: Main (Today, Missions/Tasks, Habits, Focus), Personal (Goals/Projects, Trackers, Journal), Reflection (Reviews, Timeline, Achievements), Account (Profile, Settings). On mobile, use a compact bottom navigation and a prominent Quick Capture action. Do not reproduce the reference's brand, exact visual styling, AI assistant, or social features.
