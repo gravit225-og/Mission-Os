@@ -42,6 +42,15 @@ Mission OS itself contains **no built-in AI chatbot, AI coach, AI-generated refl
 - Privacy, portability, and user control.
 - No dependence on AI for core app functionality.
 
+## Master product specification
+
+The product direction has expanded from a productivity tracker into an all-in-one personal workspace and life-management system. The v2 master spec supersedes the narrower v1 product outline while preserving its useful requirements.
+
+- [Master Specification v2](docs/MASTER_SPEC_V2.md)
+- [Workspace Data Model](docs/WORKSPACE_DATA_MODEL.md)
+- [Research & Product Benchmarks](docs/RESEARCH_BENCHMARKS.md)
+- [Architecture Decisions](docs/ARCHITECTURE_DECISIONS.md)
+
 ## Documentation
 
 - [Product Requirements Document](docs/PRODUCT_REQUIREMENTS.md)
