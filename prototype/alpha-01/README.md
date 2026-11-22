@@ -1,22 +1,36 @@
-# Mission OS Alpha 0.1 Prototype
+# Mission OS Alpha 0.1 prototype
 
-This folder documents the first dependency-free prototype source bundle.
+A dependency-free, mobile-first interface prototype for validating the Mission OS workspace experience.
 
-The source archive is delivered separately as `Mission-OS-Alpha-0.1.zip`. Extract it and serve the `mission-os-alpha-01` folder over localhost or HTTPS.
+## GitHub Pages preview
 
-## Contents
-- Responsive app shell and Today dashboard.
-- Workspace page creation and local writing experiment.
-- Journal quick capture and timeline.
-- Search across local records.
-- IndexedDB persistence and page autosave.
-- PWA manifest and app-shell service worker.
+The workflow at `.github/workflows/deploy-mission-os-preview.yml` publishes this folder when `prototype/alpha-01` is updated.
 
-## Run
+Expected preview URL: https://gravit225-og.github.io/Mission-Os/
+
+**One-time repository setting:** open **Settings → Pages → Build and deployment → Source**, choose **GitHub Actions**, and save. Then open **Actions**, select **Deploy Mission OS prototype**, and run it with **Run workflow** (or push another commit to this branch). GitHub Pages is not yet confirmed active until the first deployment succeeds.
+
+## Included experiments
+
+- Today dashboard and navigation
+- Workspace page creation and local autosave
+- Unified journal capture (notes, ideas, reflections, learning, decisions)
+- Local JSON backup export
+- Recovery Mode preference
+- PWA manifest and static app-shell service worker
+
+## Run locally
+
+Serve this folder over localhost or HTTPS. For example:
+
 ```bash
 python -m http.server 4173
 ```
-Open `http://localhost:4173`.
 
-## Important
-This is a local-only prototype, not the production application. It has no authentication, cloud database, synchronization, or ChatGPT connector. The contenteditable editor is an experiment, not a final editor choice. See [Technical Spike Alpha 0.1](../../docs/TECHNICAL_SPIKE_ALPHA_01.md) for verified checks and remaining tests.
+Then open `http://localhost:4173`.
+
+## Important limitations
+
+This is a browser prototype, not production software. Pages and journal entries are stored in the current browser using IndexedDB. There is no authentication, cloud database, cross-device sync, production editor, task engine, habit engine, or MCP integration. The service worker caches static app assets only. Browser interaction and offline behaviour must be verified on real devices before relying on them.
+
+Do not enter sensitive personal information into this public preview. The source repository and preview site are public; this prototype has no account or server-side privacy controls.
