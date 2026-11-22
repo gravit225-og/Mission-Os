@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101113"><meta name="description" content="Mission OS: Your Life. One System.">
+<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./styles.css"><title>Mission OS · Your Life. One System.</title>
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar"><div class="brand"><span class="brand-mark">M</span><div><b>MISSION OS</b><small>Your Life. One System.</small></div></div>
+<nav id="side-nav"><button data-view="today" class="active">◷ <span>Today</span></button><button data-view="workspace">▤ <span>Workspace</span></button><button data-view="journal">▧ <span>Journal</span></button><button data-view="manage">⚙ <span>Manage</span></button></nav>
+<div class="sidebar-foot">PRIVATE WORKSPACE <span>ALPHA 0.1</span></div></aside>
+<main class="main">
+<header class="topbar"><div><span class="eyebrow">PERSONAL COMMAND CENTRE</span><h1 id="page-heading">Today</h1></div><button class="avatar" aria-label="Profile">G</button></header>
+<section id="view-today" class="view active">
+<div class="welcome"><div><span class="eyebrow">YOUR SPACE, YOUR PACE</span><h2>Make today count.</h2><p>A calm place to think, plan and make progress.</p></div><div class="level"><span>LEVEL</span><strong>01</strong><small>Explorer</small></div></div>
+<div class="grid two"><article class="panel mission"><div class="panel-head"><span class="eyebrow">MAIN MISSION</span><span class="tag">TODAY</span></div><h3>Choose your next meaningful step.</h3><p>Your main mission will appear here when you create one.</p><button class="primary" data-go="workspace">Open workspace</button></article>
+<article class="panel"><div class="panel-head"><span class="eyebrow">TODAY'S BRIEFING</span><span class="muted">∞</span></div><h3>Room to focus.</h3><p>Capture thoughts quickly. Organise them when you're ready.</p><button class="secondary" data-go="journal">Quick capture</button></article></div>
+<div class="grid two lower"><article class="panel"><div class="panel-head"><span class="eyebrow">HABITS DUE</span><span class="muted">Coming later</span></div><p class="muted">Flexible tracking is planned for a future stage.</p></article><article class="panel"><div class="panel-head"><span class="eyebrow">RECENT ACTIVITY</span><span class="muted">Latest</span></div><div id="recent-activity" class="empty">Nothing captured yet.</div></article></div>
+</section>
+<section id="view-workspace" class="view"><div class="section-intro"><div><h2>Your workspace</h2><p>Pages for projects, plans, learning and everything else.</p></div><button id="new-page" class="primary">＋ New page</button></div><div class="workspace-layout"><div class="panel page-list"><span class="eyebrow">PAGES</span><div id="pages-list" class="empty">No pages yet. Create your first page.</div></div><article class="panel editor"><input id="page-title" class="title-input" placeholder="Untitled page" aria-label="Page title"><div class="editor-toolbar"><button data-format="bold"><b>B</b></button><button data-format="italic"><i>I</i></button><button data-format="insertUnorderedList">• List</button><button data-format="formatBlock" data-value="h2">Heading</button></div><div id="page-body" class="writing-area" contenteditable="true" data-placeholder="Start writing..."></div><small id="save-status" class="muted">Local draft</small></article></div></section>
+<section id="view-journal" class="view"><div class="section-intro"><div><h2>Journal</h2><p>A unified home for notes, ideas and reflections.</p></div></div><article class="panel capture-panel"><label for="capture-type">Entry type</label><select id="capture-type"><option>Note</option><option>Idea</option><option>Reflection</option><option>Learning</option><option>Decision</option></select><textarea id="capture-text" rows="4" placeholder="Capture a thought..."></textarea><div class="capture-actions"><small class="muted">Saved in this browser only</small><button id="save-entry" class="primary">Save entry</button></div></article><div id="journal-list" class="journal-list"></div></section>
+<section id="view-manage" class="view"><div class="section-intro"><div><h2>Manage</h2><p>Settings and workspace controls.</p></div></div><article class="panel settings"><div><h3>Recovery mode</h3><p class="muted">A gentler view when you need less pressure.</p></div><label class="switch"><input id="recovery-toggle" type="checkbox"><span></span></label></article><article class="panel settings"><div><h3>Local data</h3><p class="muted">This prototype stores pages and journal entries on this device. No account or cloud sync.</p></div><button id="export-data" class="secondary">Export backup</button></article></section>
+</main></div>
+<nav class="mobile-nav"><button data-view="today" class="active">◷<small>Today</small></button><button data-view="workspace">▤<small>Space</small></button><button data-view="journal">▧<small>Journal</small></button><button data-view="manage">⚙<small>Manage</small></button></nav>
+<script src="./app.js"></script>
+</body></html>
